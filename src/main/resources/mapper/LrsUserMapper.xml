@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lrs.dao.LrsUserDao"><!--namespace主要用于绑定Dao接口，用于绑定com.lrs.dao.LrsUserDao 接口-->
+    <sql id="userField">
+        a.id as "id",
+        a.name as "name",
+        a.password as "password"
+    </sql>
+    <select id="findAll" resultType="com.lrs.model.LrsUser">
+        select
+        <include refid="userField"/>
+        from lrs_user as a
+    </select>
+</mapper>
